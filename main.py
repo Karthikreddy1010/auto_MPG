@@ -16,9 +16,11 @@ from sklearn.model_selection import GridSearchCV
 # Task 1 Data Loading
 
 # Define column names
-column_names = ["mpg", "cylinders", "displacement", "horsepower", "weight",
-                "acceleration", "model_year", "origin", "car_name"]
-rawData = pd.read_csv("auto-mpg.csv", names=column_names, header=None, sep=r'\s+')
+column_names = ['mpg', 'cylinders', 'displacement', 'horsepower', 'weight', 
+                'acceleration', 'model_year', 'origin', 'car_name']
+
+# Load the data correctly
+rawData = pd.read_csv('auto-mpg.data', sep=r'\s+', names=column_names, na_values='?')
 
 # Compute number of rows and columns
 dataRows, dataCols = rawData.shape
